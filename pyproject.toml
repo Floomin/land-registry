@@ -1,0 +1,31 @@
+[project]
+name = "land-registry"
+version = "0.2.0"
+description = "Land Registry Analytics — аналіз реєстру земельних ділянок (Streamlit)"
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit>=1.40",
+    "pandas>=2.2",
+    "sqlalchemy>=2.0",
+    "pyodbc>=5.1",
+    "python-dotenv>=1.0",
+    "folium>=0.17",
+    "streamlit-folium>=0.23",
+    "shapely>=2.0",
+    "openpyxl>=3.1",
+    "xlsxwriter>=3.2",
+]
+
+[dependency-groups]
+dev = ["ruff>=0.6"]
+
+[tool.uv]
+package = false   # запускаємо як скрипт, без встановлення пакета
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]  # довгі рядки з українськими підписами UI допустимі
